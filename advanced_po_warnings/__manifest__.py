@@ -19,7 +19,7 @@ Each check is either *Warning only* or *Warning + block confirmation*. Blocked o
 get a detailed alert, a chatter message and a review activity for the designated
 supervisors, who can bypass (and confirm) or reject the order with a justification.
 """,
-    'version': '16.0.1.0.0',
+    'version': '19.0.1.0.0',
     'category': 'Inventory/Purchase',
     'author': 'Ibrahim Yahia',
     'website': 'https://www.linkedin.com/in/ibrahim-yahia',

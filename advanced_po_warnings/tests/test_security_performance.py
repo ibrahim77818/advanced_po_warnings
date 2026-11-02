@@ -74,7 +74,7 @@ class TestPOWarningSecurity(POWarningCommon):
 
     def test_supervisor_group_implies_purchase_user(self):
         self.assertTrue(self.supervisor.has_group('purchase.group_purchase_user'))
-        self.assertIn(self.env.ref('base.user_admin'), self.supervisor_group.users)
+        self.assertIn(self.env.ref('base.user_admin'), self.supervisor_group.user_ids)
 
 
 @tagged('post_install', '-at_install', 'po_warnings')

@@ -41,7 +41,7 @@ class TestPOWarningWorkflow(POWarningCommon):
     def test_activity_falls_back_to_all_supervisors(self):
         self.company.po_warning_user_ids = [(5, 0, 0)]
         order = self._blocked_order()
-        expected = self.supervisor_group.users.filtered(
+        expected = self.supervisor_group.user_ids.filtered(
             lambda u: u.active and not u.share and self.company in u.company_ids)
         self.assertEqual(self._review_activities(order).user_id, expected)
         self.assertIn(self.supervisor_2, expected)
@@ -199,3 +199,14 @@ class TestPOWarningWorkflow(POWarningCommon):
         with form.order_line.edit(0) as line:
             line.product_qty = 4
         self.assertEqual(form.po_warning_preview_level, 'none')
+
+    def test_chatter_layout_fits_side_panel(self):
+        order = self._blocked_order()
+        note = order.message_ids[0].body
+        self.assertIn('o_po_warning_list', note, 'chatter notes use the stacked layout')
+        self.assertNotIn('<table', note)
+        self.assertIn('/odoo/purchase.order/%s' % self.original.id, note)
+        activity = self._review_activities(order)
+        self.assertIn('o_po_warning_list', activity.note)
+        preview_order = self.make_po(self.vendor_a, [(self.p1, 5)])
+        self.assertIn('<table', preview_order.po_warning_preview, 'the full-width preview keeps the table')

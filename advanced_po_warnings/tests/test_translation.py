@@ -23,8 +23,11 @@ class TestPOWarningTranslation(POWarningCommon):
         self.assertIn('نفس المنتجات والكميات', hits[0]['message'])
         self.assertIn('نفس المورد', hits[0]['message'])
         html = order._po_warning_render(hits)
-        for term in ('القاعدة', 'تكرار الأمر', 'تحذير + حظر التأكيد'):
+        for term in ('تكرار الأمر', 'تحذير + حظر التأكيد', 'الأوامر ذات الصلة'):
             self.assertIn(term, html)
+        preview = order._po_warning_render(hits, context='preview')
+        for term in ('القاعدة', 'الإجراء', 'التنبيه', 'سيُحظر هذا الأمر'):
+            self.assertIn(term, preview)
 
     def test_no_context_language_uses_user_language_consistently(self):
         user = self.supervisor
@@ -33,7 +36,7 @@ class TestPOWarningTranslation(POWarningCommon):
         hits = order._po_warning_evaluate()[0]
         html = order._po_warning_render(hits)
         self.assertIn('نفس المورد', hits[0]['message'])
-        self.assertIn('القاعدة', html, 'table headers follow the same language as the messages')
+        self.assertIn('الأوامر ذات الصلة', html, 'template labels follow the same language as the messages')
         self.assertNotIn('Same vendor', html)
 
     def test_arabic_settings_labels(self):

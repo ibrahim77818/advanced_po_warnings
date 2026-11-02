@@ -30,7 +30,7 @@ class ResCompany(models.Model):
         string='Review Activity Users',
         domain=lambda self: [
             ('share', '=', False),
-            ('groups_id', 'in', self.env.ref(
+            ('group_ids', 'in', self.env.ref(
                 'advanced_po_warnings.group_po_warning_supervisor', raise_if_not_found=False
             ).ids or [0]),
         ],

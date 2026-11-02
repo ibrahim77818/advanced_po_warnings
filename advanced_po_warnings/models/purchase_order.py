@@ -20,8 +20,8 @@ from odoo.exceptions import AccessError, UserError
 from odoo.tools.sql import create_index
 
 
-STATES_ALL_ACTIVE = ['draft', 'sent', 'to approve', 'purchase', 'done']
-STATES_CONFIRMED = ['to approve', 'purchase', 'done']
+STATES_ALL_ACTIVE = ['draft', 'sent', 'to approve', 'purchase']
+STATES_CONFIRMED = ['to approve', 'purchase']
 REVIEW_FIELDS = {'po_review_state', 'po_review_note', 'po_reviewed_by_id', 'po_reviewed_date'}
 QTY_QUANT = Decimal('0.0001')
 
@@ -64,7 +64,7 @@ class PurchaseOrder(models.Model):
     def init(self):
         super().init()
         # Supports the period filter used by every rule (company + date window).
-        create_index(self._cr, 'purchase_order_po_warning_company_date_idx', self._table,
+        create_index(self.env.cr, 'purchase_order_po_warning_company_date_idx', self._table,
                      ['company_id', 'date_order'])
 
     # ------------------------------------------------------------------------------
@@ -72,13 +72,13 @@ class PurchaseOrder(models.Model):
     # ------------------------------------------------------------------------------
     def _compute_po_warning_count(self):
         data = self.env['purchase.order.warning']._read_group(
-            [('order_id', 'in', self.ids)], ['order_id'], ['order_id'])
-        counts = {d['order_id'][0]: d['order_id_count'] for d in data}
+            [('order_id', 'in', self.ids)], ['order_id'], ['__count'])
+        counts = {order.id: count for order, count in data}
         for order in self:
             order.po_warning_count = counts.get(order.id, 0)
 
     @api.depends('partner_id', 'date_order', 'company_id', 'state', 'picking_type_id',
-                 'order_line.product_id', 'order_line.product_qty', 'order_line.product_uom',
+                 'order_line.product_id', 'order_line.product_qty', 'order_line.product_uom_id',
                  'order_line.display_type')
     def _compute_po_warning_preview(self):
         todo = self.filtered(lambda o: o.state in ('draft', 'sent') and o.company_id.po_warning_enabled)
@@ -458,7 +458,7 @@ class PurchaseOrder(models.Model):
         self.ensure_one()
         company = self.company_id
         group = self.env.ref('advanced_po_warnings.group_po_warning_supervisor')
-        supervisors = group.sudo().users.filtered(
+        supervisors = group.sudo().user_ids.filtered(
             lambda u: u.active and not u.share and company in u.company_ids)
         configured = company.po_warning_user_ids & supervisors
         return configured or supervisors

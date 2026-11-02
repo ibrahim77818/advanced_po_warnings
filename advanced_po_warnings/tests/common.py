@@ -45,9 +45,9 @@ class POWarningCommon(TransactionCase):
         cls.vendor_b = Partner.create({'name': 'Vendor B', 'is_company': True})
 
         Product = cls.env['product.product']
-        cls.p1 = Product.create({'name': 'Warn Item 1', 'detailed_type': 'product'})
-        cls.p2 = Product.create({'name': 'Warn Item 2', 'detailed_type': 'product'})
-        cls.p3 = Product.create({'name': 'Warn Item 3', 'detailed_type': 'product'})
+        cls.p1 = Product.create({'name': 'Warn Item 1', 'type': 'consu', 'is_storable': True})
+        cls.p2 = Product.create({'name': 'Warn Item 2', 'type': 'consu', 'is_storable': True})
+        cls.p3 = Product.create({'name': 'Warn Item 3', 'type': 'consu', 'is_storable': True})
 
         cls.wh1 = cls.env['stock.warehouse'].search([('company_id', '=', cls.company.id)], limit=1)
         cls.wh2 = cls.env['stock.warehouse'].create({'name': 'Warn WH 2', 'code': 'WWH2'})
@@ -68,7 +68,7 @@ class POWarningCommon(TransactionCase):
         for line in lines:
             vals = {'product_id': line[0].id, 'product_qty': line[1]}
             if len(line) > 2:
-                vals['product_uom'] = line[2].id
+                vals['product_uom_id'] = line[2].id
             order_lines.append((0, 0, vals))
         Order = self.env['purchase.order'].with_user(user) if user else self.env['purchase.order']
         order = Order.create({

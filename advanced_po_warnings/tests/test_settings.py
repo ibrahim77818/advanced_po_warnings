@@ -77,5 +77,5 @@ class TestPOWarningSettings(POWarningCommon):
     def test_blocked_orders_action_uses_plain_list(self):
         action = self.env.ref('advanced_po_warnings.action_po_warning_blocked_orders')
         self.assertEqual(action.view_id, self.env.ref('purchase.purchase_order_view_tree'))
-        arch = self.env['purchase.order'].get_view(action.view_id.id, 'tree')['arch']
+        arch = self.env['purchase.order'].get_view(action.view_id.id, 'list')['arch']
         self.assertIn('po_review_state', arch)
