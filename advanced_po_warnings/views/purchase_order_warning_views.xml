@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="purchase_order_warning_view_tree" model="ir.ui.view">
+        <field name="name">purchase.order.warning.tree</field>
+        <field name="model">purchase.order.warning</field>
+        <field name="arch" type="xml">
+            <tree create="false" edit="false" delete="false"
+                  decoration-danger="mode == 'block'" decoration-warning="mode == 'warning'">
+                <field name="create_date" string="Date"/>
+                <field name="order_id"/>
+                <field name="partner_id" optional="show"/>
+                <field name="rule"/>
+                <field name="mode" widget="badge"
+                       decoration-danger="mode == 'block'" decoration-warning="mode == 'warning'"/>
+                <field name="message"/>
+                <field name="product_id" optional="hide"/>
+                <field name="conflict_order_ids" widget="many2many_tags" optional="show"/>
+                <field name="review_state" widget="badge" optional="show"/>
+                <field name="company_id" groups="base.group_multi_company" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="purchase_order_warning_view_form" model="ir.ui.view">
+        <field name="name">purchase.order.warning.form</field>
+        <field name="model">purchase.order.warning</field>
+        <field name="arch" type="xml">
+            <form create="false" edit="false" delete="false">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="order_id"/>
+                            <field name="partner_id"/>
+                            <field name="rule"/>
+                            <field name="mode"/>
+                            <field name="review_state"/>
+                        </group>
+                        <group>
+                            <field name="product_id"/>
+                            <field name="location_id"/>
+                            <field name="warehouse_id"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+                    <field name="message"/>
+                    <field name="conflict_order_ids" widget="many2many_tags"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="purchase_order_warning_view_search" model="ir.ui.view">
+        <field name="name">purchase.order.warning.search</field>
+        <field name="model">purchase.order.warning</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="order_id"/>
+                <field name="partner_id"/>
+                <field name="product_id"/>
+                <filter name="blocking" string="Blocking" domain="[('mode', '=', 'block')]"/>
+                <filter name="warning_only" string="Warning Only" domain="[('mode', '=', 'warning')]"/>
+                <separator/>
+                <filter name="pending_review" string="Pending Review" domain="[('review_state', '=', 'blocked')]"/>
+                <group expand="0" string="Group By">
+                    <filter name="groupby_rule" string="Rule" context="{'group_by': 'rule'}"/>
+                    <filter name="groupby_mode" string="Enforcement" context="{'group_by': 'mode'}"/>
+                    <filter name="groupby_order" string="Purchase Order" context="{'group_by': 'order_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_purchase_order_warning" model="ir.actions.act_window">
+        <field name="name">Order Warnings Log</field>
+        <field name="res_model">purchase.order.warning</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_empty_folder">No warning recorded yet</p>
+            <p>Warnings raised when purchase orders are confirmed are logged here.</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_purchase_order_warning" name="Order Warnings Log"
+              parent="purchase.menu_procurement_management" action="action_purchase_order_warning"
+              sequence="26" groups="advanced_po_warnings.group_po_warning_supervisor"/>
+</odoo>

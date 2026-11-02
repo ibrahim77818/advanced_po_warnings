@@ -1,0 +1,966 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* advanced_po_warnings
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-01 18:10+0000\n"
+"PO-Revision-Date: 2026-11-01 18:10+0000\n"
+"Last-Translator: Ibrahim Yahia\n"
+"Language-Team: Arabic\n"
+"Language: ar_001\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+#. module: advanced_po_warnings
+#. odoo-python
+#: code:addons/advanced_po_warnings/models/purchase_order.py:0
+#, python-format
+msgid "%(orders)s confirmed. Warnings were recorded in the chatter."
+msgstr "تم تأكيد %(orders)s. سُجّلت التحذيرات في سجل المحادثة."
+
+#. module: advanced_po_warnings
+#. odoo-python
+#: code:addons/advanced_po_warnings/models/purchase_order.py:0
+#, python-format
+msgid ""
+"%(orders)s could not be confirmed. Supervisors have been notified for "
+"review."
+msgstr "تعذّر تأكيد %(orders)s. تم إشعار المشرفين للمراجعة."
+
+#. module: advanced_po_warnings
+#. odoo-python
+#: code:addons/advanced_po_warnings/models/purchase_order.py:0
+#, python-format
+msgid ""
+"%(product)s was already ordered %(count)s time(s) within %(days)s days "
+"(%(scope)s, %(docs)s)."
+msgstr ""
+"سبق طلب المنتج %(product)s عدد %(count)s مرة خلال %(days)s يومًا (%(scope)s،"
+" %(docs)s)."
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_order_form_po_warnings
+msgid ""
+"<i class=\"fa fa-ban me-2\" role=\"img\" aria-label=\"Blocked\" title=\"Blocked\"/>\n"
+"                    <strong>Confirmation blocked.</strong>\n"
+"                    This order triggered blocking warnings and is waiting for a supervisor review.\n"
+"                    See the <em>Order Warnings</em> tab."
+msgstr ""
+"<i class=\"fa fa-ban me-2\" role=\"img\" aria-label=\"محظور\" title=\"محظور\"/>\n"
+"                    <strong>تم حظر التأكيد.</strong>\n"
+"                    أدى هذا الأمر إلى تحذيرات حاظرة وهو بانتظار مراجعة المشرف.\n"
+"                    راجع علامة التبويب <em>تحذيرات الأمر</em>."
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.res_config_settings_view_form_po_warnings
+msgid ""
+"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
+"specific.\" aria-label=\"Values set here are company-specific.\" "
+"groups=\"base.group_multi_company\" role=\"img\"/>"
+msgstr ""
+"<span class=\"fa fa-lg fa-building-o\" title=\"القيم المحددة هنا خاصة "
+"بالشركة.\" aria-label=\"القيم المحددة هنا خاصة بالشركة.\" "
+"groups=\"base.group_multi_company\" role=\"img\"/>"
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.res_config_settings_view_form_po_warnings
+msgid "Advanced Order Warnings"
+msgstr "تحذيرات الطلبات المتقدمة"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_company__po_warning_enabled
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_config_settings__po_warning_enabled
+msgid "Advanced Purchase Order Warnings"
+msgstr "تحذيرات أوامر الشراء المتقدمة"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order_warning__message
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.po_warning_alerts
+msgid "Alert"
+msgstr "التنبيه"
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.res_config_settings_view_form_po_warnings
+msgid "All locations"
+msgstr "جميع المواقع"
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.res_config_settings_view_form_po_warnings
+msgid "All warehouses"
+msgstr "جميع المستودعات"
+
+#. module: advanced_po_warnings
+#. odoo-python
+#: code:addons/advanced_po_warnings/models/purchase_order.py:0
+#, python-format
+msgid ""
+"Another order is already scheduled for %(dest)s within %(days)s days "
+"(%(scope)s)."
+msgstr ""
+"يوجد أمر آخر مُجدول بالفعل إلى %(dest)s خلال %(days)s يومًا (%(scope)s)."
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields.selection,name:advanced_po_warnings.selection__res_company__po_dest_vendor_scope__any
+#: model:ir.model.fields.selection,name:advanced_po_warnings.selection__res_company__po_dup_vendor_scope__any
+#: model:ir.model.fields.selection,name:advanced_po_warnings.selection__res_company__po_freq_vendor_scope__any
+msgid "Any vendor"
+msgstr "أي مورد"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields.selection,name:advanced_po_warnings.selection__purchase_order__po_review_state__blocked
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_order_form_po_warnings
+msgid "Blocked"
+msgstr "محظور"
+
+#. module: advanced_po_warnings
+#: model:ir.actions.act_window,name:advanced_po_warnings.action_po_warning_blocked_orders
+#: model:ir.ui.menu,name:advanced_po_warnings.menu_po_warning_blocked_orders
+msgid "Blocked Orders"
+msgstr "الأوامر المحظورة"
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_order_search_po_warnings
+msgid "Blocked by Warnings"
+msgstr "محظورة بسبب التحذيرات"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields.selection,name:advanced_po_warnings.selection__purchase_order__po_warning_preview_level__block
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_order_warning_view_search
+msgid "Blocking"
+msgstr "حاظر"
+
+#. module: advanced_po_warnings
+#. odoo-python
+#: code:addons/advanced_po_warnings/models/purchase_order.py:0
+#, python-format
+msgid "Blocking warnings were resolved before confirmation."
+msgstr "تمت معالجة التحذيرات الحاظرة قبل التأكيد."
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.po_warning_review_wizard_view_form
+msgid "Bypass & Confirm"
+msgstr "تجاوز وتأكيد"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields.selection,name:advanced_po_warnings.selection__purchase_order__po_review_state__bypassed
+msgid "Bypassed"
+msgstr "تم التجاوز"
+
+#. module: advanced_po_warnings
+#. odoo-python
+#: code:addons/advanced_po_warnings/models/purchase_order.py:0
+#, python-format
+msgid "Bypassed: %s"
+msgstr "تم التجاوز: %s"
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.res_config_settings_view_form_po_warnings
+msgid ""
+"Check purchase orders for duplicates, frequent reorders and destinations "
+"when they are confirmed"
+msgstr ""
+"فحص أوامر الشراء عند تأكيدها للكشف عن التكرار وإعادة الطلب المتكرر ووجهات "
+"التسليم"
+
+#. module: advanced_po_warnings
+#: model:ir.model,name:advanced_po_warnings.model_res_company
+msgid "Companies"
+msgstr "الشركات"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order_warning__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: advanced_po_warnings
+#: model:ir.model,name:advanced_po_warnings.model_res_config_settings
+msgid "Config Settings"
+msgstr "إعدادات التهيئة"
+
+#. module: advanced_po_warnings
+#. odoo-python
+#: code:addons/advanced_po_warnings/models/purchase_order.py:0
+#, python-format
+msgid "Confirmation blocked"
+msgstr "تم حظر التأكيد"
+
+#. module: advanced_po_warnings
+#. odoo-python
+#: code:addons/advanced_po_warnings/models/purchase_order.py:0
+#, python-format
+msgid "Confirmed after supervisor bypass"
+msgstr "تم التأكيد بعد تجاوز المشرف"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields.selection,name:advanced_po_warnings.selection__res_company__po_dest_doc_scope__confirmed
+#: model:ir.model.fields.selection,name:advanced_po_warnings.selection__res_company__po_freq_doc_scope__confirmed
+msgid "Confirmed purchase orders"
+msgstr "أوامر الشراء المؤكدة"
+
+#. module: advanced_po_warnings
+#. odoo-python
+#: code:addons/advanced_po_warnings/models/purchase_order.py:0
+#: code:addons/advanced_po_warnings/models/purchase_order.py:0
+#, python-format
+msgid "Confirmed with warnings"
+msgstr "تم التأكيد مع وجود تحذيرات"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_po_warning_review_wizard__create_uid
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order_warning__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_po_warning_review_wizard__create_date
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order_warning__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_order_warning_view_tree
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: advanced_po_warnings
+#. odoo-python
+#: code:addons/advanced_po_warnings/models/purchase_order.py:0
+#, python-format
+msgid "Deliveries to %(dest)s are restricted."
+msgstr "التسليم إلى %(dest)s مقيّد."
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields.selection,name:advanced_po_warnings.selection__purchase_order_warning__rule__destination
+msgid "Destination"
+msgstr "الوجهة"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_company__po_dest_active
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_config_settings__po_dest_active
+msgid "Destination Check"
+msgstr "فحص الوجهة"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order_warning__location_id
+msgid "Destination Location"
+msgstr "موقع الوجهة"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order_warning__warehouse_id
+msgid "Destination Warehouse"
+msgstr "مستودع الوجهة"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_company__po_dest_doc_scope
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_config_settings__po_dest_doc_scope
+msgid "Destination: Documents"
+msgstr "الوجهة: المستندات"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_company__po_dest_mode
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_config_settings__po_dest_mode
+msgid "Destination: Enforcement"
+msgstr "الوجهة: الإجراء"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_company__po_dest_location_ids
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_config_settings__po_dest_location_ids
+msgid "Destination: Locations"
+msgstr "الوجهة: المواقع"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_company__po_dest_target
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_config_settings__po_dest_target
+msgid "Destination: Monitor"
+msgstr "الوجهة: المراقبة"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_company__po_dest_days
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_config_settings__po_dest_days
+msgid "Destination: Time Window (Days)"
+msgstr "الوجهة: الفترة الزمنية (أيام)"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_company__po_dest_vendor_scope
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_config_settings__po_dest_vendor_scope
+msgid "Destination: Vendor Scope"
+msgstr "الوجهة: نطاق الموردين"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_company__po_dest_warehouse_ids
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_config_settings__po_dest_warehouse_ids
+msgid "Destination: Warehouses"
+msgstr "الوجهة: المستودعات"
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.res_config_settings_view_form_po_warnings
+msgid "Detect orders with the same products ordered again within a period"
+msgstr ""
+"اكتشاف الأوامر التي تتضمن نفس المنتجات المطلوبة مجددًا خلال فترة محددة"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields.selection,name:advanced_po_warnings.selection__res_company__po_dest_vendor_scope__different
+#: model:ir.model.fields.selection,name:advanced_po_warnings.selection__res_company__po_dup_vendor_scope__different
+#: model:ir.model.fields.selection,name:advanced_po_warnings.selection__res_company__po_freq_vendor_scope__different
+msgid "Different vendors"
+msgstr "موردون مختلفون"
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.po_warning_review_wizard_view_form
+msgid "Discard"
+msgstr "إهمال"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_po_warning_review_wizard__display_name
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order_warning__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.res_config_settings_view_form_po_warnings
+msgid "Documents"
+msgstr "المستندات"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_company__po_dup_mode
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_config_settings__po_dup_mode
+msgid "Duplicate: Enforcement"
+msgstr "التكرار: الإجراء"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_company__po_dup_match_qty
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_config_settings__po_dup_match_qty
+msgid "Duplicate: Match Quantities"
+msgstr "التكرار: مطابقة الكميات"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_company__po_dup_days
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_config_settings__po_dup_days
+msgid "Duplicate: Period (Days)"
+msgstr "التكرار: الفترة (أيام)"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_company__po_dup_vendor_scope
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_config_settings__po_dup_vendor_scope
+msgid "Duplicate: Vendor Scope"
+msgstr "التكرار: نطاق الموردين"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order_warning__mode
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.po_warning_alerts
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_order_warning_view_search
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.res_config_settings_view_form_po_warnings
+msgid "Enforcement"
+msgstr "الإجراء"
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.po_warning_review_wizard_view_form
+msgid "Explain why the order is bypassed or rejected..."
+msgstr "اشرح سبب تجاوز الأمر أو رفضه..."
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.res_config_settings_view_form_po_warnings
+msgid ""
+"Flag orders delivered to monitored locations or warehouses within a time "
+"window"
+msgstr "تمييز الأوامر المسلّمة إلى مواقع أو مستودعات مراقَبة خلال فترة زمنية"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,help:advanced_po_warnings.field_res_company__po_dest_days
+#: model:ir.model.fields,help:advanced_po_warnings.field_res_config_settings__po_dest_days
+msgid ""
+"Flag the order when another order to the same destination exists within this"
+" many days. Set 0 to flag every order to a monitored destination (restricted"
+" destination)."
+msgstr ""
+"تمييز الأمر عند وجود أمر آخر إلى نفس الوجهة خلال هذا العدد من الأيام. اضبطها"
+" على 0 لتمييز كل أمر إلى وجهة مراقَبة (وجهة مقيّدة)."
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_company__po_freq_doc_scope
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_config_settings__po_freq_doc_scope
+msgid "Frequency: Documents"
+msgstr "التكرار الدوري: المستندات"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_company__po_freq_mode
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_config_settings__po_freq_mode
+msgid "Frequency: Enforcement"
+msgstr "التكرار الدوري: الإجراء"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_company__po_freq_min_orders
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_config_settings__po_freq_min_orders
+msgid "Frequency: Previous Orders Threshold"
+msgstr "التكرار الدوري: حد الأوامر السابقة"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_company__po_freq_days
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_config_settings__po_freq_days
+msgid "Frequency: Time Window (Days)"
+msgstr "التكرار الدوري: الفترة الزمنية (أيام)"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_company__po_freq_vendor_scope
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_config_settings__po_freq_vendor_scope
+msgid "Frequency: Vendor Scope"
+msgstr "التكرار الدوري: نطاق الموردين"
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_order_warning_view_search
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_po_warning_review_wizard__id
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order_warning__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields.selection,name:advanced_po_warnings.selection__purchase_order_warning__rule__frequency
+msgid "Item Reorder Frequency"
+msgstr "معدل إعادة طلب الصنف"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_company__po_freq_active
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_config_settings__po_freq_active
+msgid "Item Reorder Frequency Check"
+msgstr "فحص معدل إعادة طلب الصنف"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_po_warning_review_wizard__note
+msgid "Justification"
+msgstr "المبرر"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_po_warning_review_wizard____last_update
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order_warning____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_po_warning_review_wizard__write_uid
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order_warning__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_po_warning_review_wizard__write_date
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order_warning__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.res_config_settings_view_form_po_warnings
+msgid "Leave empty to notify every PO Warnings Supervisor of the company."
+msgstr "اتركه فارغًا لإشعار جميع مشرفي تحذيرات أوامر الشراء في الشركة."
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.res_config_settings_view_form_po_warnings
+msgid "Locations"
+msgstr "المواقع"
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.res_config_settings_view_form_po_warnings
+msgid "Match quantities"
+msgstr "مطابقة الكميات"
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.res_config_settings_view_form_po_warnings
+msgid "Monitor"
+msgstr "المراقبة"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,help:advanced_po_warnings.field_res_company__po_dest_location_ids
+#: model:ir.model.fields,help:advanced_po_warnings.field_res_config_settings__po_dest_location_ids
+msgid ""
+"Monitored locations (their sub-locations included). Leave empty to monitor "
+"all."
+msgstr ""
+"المواقع المراقَبة (بما فيها المواقع الفرعية). اتركه فارغًا لمراقبة الكل."
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,help:advanced_po_warnings.field_res_company__po_dest_warehouse_ids
+#: model:ir.model.fields,help:advanced_po_warnings.field_res_config_settings__po_dest_warehouse_ids
+msgid "Monitored warehouses. Leave empty to monitor all."
+msgstr "المستودعات المراقَبة. اتركه فارغًا لمراقبة الكل."
+
+#. module: advanced_po_warnings
+#: model_terms:ir.actions.act_window,help:advanced_po_warnings.action_po_warning_blocked_orders
+msgid "No purchase order is waiting for a review"
+msgstr "لا يوجد أمر شراء بانتظار المراجعة"
+
+#. module: advanced_po_warnings
+#: model_terms:ir.actions.act_window,help:advanced_po_warnings.action_purchase_order_warning
+msgid "No warning recorded yet"
+msgstr "لم يُسجَّل أي تحذير بعد"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields.selection,name:advanced_po_warnings.selection__purchase_order__po_warning_preview_level__none
+msgid "None"
+msgstr "لا شيء"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields.selection,name:advanced_po_warnings.selection__purchase_order__po_review_state__none
+msgid "Not Required"
+msgstr "غير مطلوبة"
+
+#. module: advanced_po_warnings
+#. odoo-python
+#: code:addons/advanced_po_warnings/models/purchase_order.py:0
+#, python-format
+msgid "Only PO Warnings Supervisors can review blocked purchase orders."
+msgstr "يمكن لمشرفي تحذيرات أوامر الشراء فقط مراجعة أوامر الشراء المحظورة."
+
+#. module: advanced_po_warnings
+#. odoo-python
+#: code:addons/advanced_po_warnings/models/purchase_order.py:0
+#, python-format
+msgid "Only blocked purchase orders can be bypassed."
+msgstr "يمكن تجاوز أوامر الشراء المحظورة فقط."
+
+#. module: advanced_po_warnings
+#. odoo-python
+#: code:addons/advanced_po_warnings/models/purchase_order.py:0
+#, python-format
+msgid "Only blocked purchase orders can be rejected."
+msgstr "يمكن رفض أوامر الشراء المحظورة فقط."
+
+#. module: advanced_po_warnings
+#. odoo-python
+#: code:addons/advanced_po_warnings/models/purchase_order.py:0
+#, python-format
+msgid "Only blocked purchase orders can be reviewed."
+msgstr "يمكن مراجعة أوامر الشراء المحظورة فقط."
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields.selection,name:advanced_po_warnings.selection__purchase_order_warning__rule__duplicate
+msgid "Order Duplicate"
+msgstr "تكرار الأمر"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_company__po_dup_active
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_config_settings__po_dup_active
+msgid "Order Duplicate Check"
+msgstr "فحص تكرار الأمر"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order__po_warning_ids
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_order_form_po_warnings
+msgid "Order Warnings"
+msgstr "تحذيرات الأمر"
+
+#. module: advanced_po_warnings
+#: model:ir.actions.act_window,name:advanced_po_warnings.action_purchase_order_warning
+#: model:ir.ui.menu,name:advanced_po_warnings.menu_purchase_order_warning
+msgid "Order Warnings Log"
+msgstr "سجل تحذيرات الأوامر"
+
+#. module: advanced_po_warnings
+#. odoo-python
+#: code:addons/advanced_po_warnings/models/purchase_order.py:0
+#, python-format
+msgid "Order confirmation blocked"
+msgstr "تم حظر تأكيد الأمر"
+
+#. module: advanced_po_warnings
+#. odoo-python
+#: code:addons/advanced_po_warnings/models/purchase_order.py:0
+#, python-format
+msgid "Order rejected by %s"
+msgstr "تم رفض الأمر بواسطة %s"
+
+#. module: advanced_po_warnings
+#: model_terms:ir.actions.act_window,help:advanced_po_warnings.action_po_warning_blocked_orders
+msgid ""
+"Orders blocked by advanced warnings appear here until a supervisor bypasses "
+"or rejects them."
+msgstr ""
+"تظهر هنا الأوامر المحظورة بسبب التحذيرات المتقدمة إلى أن يتجاوزها المشرف أو "
+"يرفضها."
+
+#. module: advanced_po_warnings
+#: model:mail.activity.type,name:advanced_po_warnings.mail_activity_type_po_warning_review
+msgid "PO Warning Review"
+msgstr "مراجعة تحذيرات أمر الشراء"
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_order_warning_view_search
+msgid "Pending Review"
+msgstr "بانتظار المراجعة"
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.res_config_settings_view_form_po_warnings
+msgid "Period (days)"
+msgstr "الفترة (أيام)"
+
+#. module: advanced_po_warnings
+#. odoo-python
+#: code:addons/advanced_po_warnings/wizard/po_warning_review_wizard.py:0
+#, python-format
+msgid "Please record a justification before taking a decision."
+msgstr "يرجى تسجيل المبرر قبل اتخاذ القرار."
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order__po_warning_preview_level
+msgid "Preview Level"
+msgstr "مستوى المعاينة"
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.res_config_settings_view_form_po_warnings
+msgid "Previous orders threshold"
+msgstr "حد الأوامر السابقة"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order_warning__product_id
+msgid "Product"
+msgstr "المنتج"
+
+#. module: advanced_po_warnings
+#: model:ir.model,name:advanced_po_warnings.model_purchase_order
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order_warning__order_id
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_order_warning_view_search
+msgid "Purchase Order"
+msgstr "أمر الشراء"
+
+#. module: advanced_po_warnings
+#: model:ir.model,name:advanced_po_warnings.model_purchase_order_warning
+msgid "Purchase Order Warning"
+msgstr "تحذير أمر الشراء"
+
+#. module: advanced_po_warnings
+#: model:ir.module.category,name:advanced_po_warnings.module_category_po_warnings
+msgid "Purchase Order Warnings"
+msgstr "تحذيرات أوامر الشراء"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_po_warning_review_wizard__order_ids
+msgid "Purchase Orders"
+msgstr "أوامر الشراء"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields.selection,name:advanced_po_warnings.selection__res_company__po_dest_doc_scope__all
+#: model:ir.model.fields.selection,name:advanced_po_warnings.selection__res_company__po_freq_doc_scope__all
+msgid "RFQs and purchase orders"
+msgstr "طلبات عروض الأسعار وأوامر الشراء"
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.po_warning_review_wizard_view_form
+msgid "Reject Order"
+msgstr "رفض الأمر"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields.selection,name:advanced_po_warnings.selection__purchase_order__po_review_state__rejected
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_order_form_po_warnings
+msgid "Rejected"
+msgstr "مرفوض"
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_order_search_po_warnings
+msgid "Rejected by Supervisor"
+msgstr "مرفوضة من المشرف"
+
+#. module: advanced_po_warnings
+#. odoo-python
+#: code:addons/advanced_po_warnings/models/purchase_order.py:0
+#, python-format
+msgid "Rejected: %s"
+msgstr "مرفوض: %s"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order_warning__conflict_order_ids
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.po_warning_alerts
+msgid "Related Orders"
+msgstr "الأوامر ذات الصلة"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_company__po_warning_user_ids
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_res_config_settings__po_warning_user_ids
+msgid "Review Activity Users"
+msgstr "مستخدمو نشاط المراجعة"
+
+#. module: advanced_po_warnings
+#. odoo-python
+#: code:addons/advanced_po_warnings/models/purchase_order.py:0
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.po_warning_review_wizard_view_form
+#, python-format
+msgid "Review Blocked Order"
+msgstr "مراجعة الأمر المحظور"
+
+#. module: advanced_po_warnings
+#: model:ir.model,name:advanced_po_warnings.model_po_warning_review_wizard
+msgid "Review Blocked Purchase Order"
+msgstr "مراجعة أمر الشراء المحظور"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order__po_review_note
+msgid "Review Justification"
+msgstr "مبرر المراجعة"
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_order_form_po_warnings
+msgid "Review Warnings"
+msgstr "مراجعة التحذيرات"
+
+#. module: advanced_po_warnings
+#: model:mail.activity.type,summary:advanced_po_warnings.mail_activity_type_po_warning_review
+msgid "Review blocked purchase order"
+msgstr "مراجعة أمر شراء محظور"
+
+#. module: advanced_po_warnings
+#. odoo-python
+#: code:addons/advanced_po_warnings/models/purchase_order.py:0
+#, python-format
+msgid "Review blocked purchase order %s"
+msgstr "مراجعة أمر الشراء المحظور %s"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order__po_reviewed_by_id
+msgid "Reviewed By"
+msgstr "تمت المراجعة بواسطة"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order__po_reviewed_date
+msgid "Reviewed On"
+msgstr "تاريخ المراجعة"
+
+#. module: advanced_po_warnings
+#: model:res.groups,comment:advanced_po_warnings.group_po_warning_supervisor
+msgid ""
+"Reviews purchase orders blocked by advanced warnings: bypass and confirm, or"
+" reject."
+msgstr ""
+"يراجع أوامر الشراء المحظورة بسبب التحذيرات المتقدمة: تجاوز وتأكيد، أو رفض."
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order_warning__rule
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.po_warning_alerts
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_order_warning_view_search
+msgid "Rule"
+msgstr "القاعدة"
+
+#. module: advanced_po_warnings
+#. odoo-python
+#: code:addons/advanced_po_warnings/models/purchase_order.py:0
+#, python-format
+msgid ""
+"Same products and quantities as another order within %(days)s days "
+"(%(scope)s)."
+msgstr ""
+"نفس المنتجات والكميات الموجودة في أمر آخر خلال %(days)s يومًا (%(scope)s)."
+
+#. module: advanced_po_warnings
+#. odoo-python
+#: code:addons/advanced_po_warnings/models/purchase_order.py:0
+#, python-format
+msgid "Same products as another order within %(days)s days (%(scope)s)."
+msgstr "نفس المنتجات الموجودة في أمر آخر خلال %(days)s يومًا (%(scope)s)."
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields.selection,name:advanced_po_warnings.selection__res_company__po_dest_vendor_scope__same
+#: model:ir.model.fields.selection,name:advanced_po_warnings.selection__res_company__po_dup_vendor_scope__same
+#: model:ir.model.fields.selection,name:advanced_po_warnings.selection__res_company__po_freq_vendor_scope__same
+msgid "Same vendor"
+msgstr "نفس المورد"
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.res_config_settings_view_form_po_warnings
+msgid "Set the time window to 0 to flag every order to these destinations."
+msgstr "اضبط الفترة الزمنية على 0 لتمييز كل أمر إلى هذه الوجهات."
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields.selection,name:advanced_po_warnings.selection__res_company__po_dest_target__location
+msgid "Specific locations"
+msgstr "مواقع محددة"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields.selection,name:advanced_po_warnings.selection__res_company__po_dest_target__warehouse
+msgid "Specific warehouses"
+msgstr "مستودعات محددة"
+
+#. module: advanced_po_warnings
+#: model:res.groups,name:advanced_po_warnings.group_po_warning_supervisor
+msgid "Supervisor"
+msgstr "مشرف"
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_order_form_po_warnings
+msgid "Supervisor Review"
+msgstr "مراجعة المشرف"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,help:advanced_po_warnings.field_res_company__po_warning_user_ids
+#: model:ir.model.fields,help:advanced_po_warnings.field_res_config_settings__po_warning_user_ids
+msgid ""
+"Supervisors who receive the review activity when an order is blocked. Leave "
+"empty to notify every PO Warnings Supervisor of the company."
+msgstr ""
+"المشرفون الذين يتلقون نشاط المراجعة عند حظر أمر. اتركه فارغًا لإشعار جميع "
+"مشرفي تحذيرات أوامر الشراء في الشركة."
+
+#. module: advanced_po_warnings
+#. odoo-python
+#: code:addons/advanced_po_warnings/models/res_company.py:0
+#, python-format
+msgid "The destination time window cannot be negative."
+msgstr "لا يمكن أن تكون الفترة الزمنية للوجهة سالبة."
+
+#. module: advanced_po_warnings
+#. odoo-python
+#: code:addons/advanced_po_warnings/models/res_company.py:0
+#, python-format
+msgid "The duplicate and frequency periods must be at least 1 day."
+msgstr "يجب ألا تقل فترتا التكرار ومعدل إعادة الطلب عن يوم واحد."
+
+#. module: advanced_po_warnings
+#. odoo-python
+#: code:addons/advanced_po_warnings/models/purchase_order.py:0
+#, python-format
+msgid "The order was cancelled."
+msgstr "تم إلغاء الأمر."
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.po_warning_review_wizard_view_form
+msgid "The order will be rejected and cancelled. Continue?"
+msgstr "سيتم رفض الأمر وإلغاؤه. هل تريد المتابعة؟"
+
+#. module: advanced_po_warnings
+#. odoo-python
+#: code:addons/advanced_po_warnings/models/res_company.py:0
+#, python-format
+msgid "The previous orders threshold must be at least 1."
+msgstr "يجب ألا يقل حد الأوامر السابقة عن 1."
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.po_warning_review_wizard_view_form
+msgid "The restriction will be bypassed and the order confirmed. Continue?"
+msgstr "سيتم تجاوز القيد وتأكيد الأمر. هل تريد المتابعة؟"
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.po_warning_alerts
+msgid ""
+"This order can be confirmed, but the following warnings will be recorded."
+msgstr "يمكن تأكيد هذا الأمر، لكن سيتم تسجيل التحذيرات التالية."
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.po_warning_alerts
+msgid ""
+"This order will be blocked on confirmation and sent to a supervisor for "
+"review."
+msgstr "سيُحظر هذا الأمر عند التأكيد ويُرسل إلى المشرف للمراجعة."
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.res_config_settings_view_form_po_warnings
+msgid "Time window (days)"
+msgstr "الفترة الزمنية (أيام)"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order_warning__partner_id
+msgid "Vendor"
+msgstr "المورد"
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.res_config_settings_view_form_po_warnings
+msgid "Vendors"
+msgstr "الموردون"
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.res_config_settings_view_form_po_warnings
+msgid "Warehouses"
+msgstr "المستودعات"
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.res_config_settings_view_form_po_warnings
+msgid "Warn when a product is reordered too often within a time window"
+msgstr "التحذير عند إعادة طلب منتج بشكل متكرر خلال فترة زمنية"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,help:advanced_po_warnings.field_res_company__po_freq_min_orders
+#: model:ir.model.fields,help:advanced_po_warnings.field_res_config_settings__po_freq_min_orders
+msgid ""
+"Warn when the product already appears on at least this many other orders in "
+"the window."
+msgstr ""
+"التحذير عندما يظهر المنتج في هذا العدد على الأقل من الأوامر الأخرى خلال "
+"الفترة."
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields.selection,name:advanced_po_warnings.selection__purchase_order__po_warning_preview_level__warning
+msgid "Warning"
+msgstr "تحذير"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields.selection,name:advanced_po_warnings.selection__purchase_order_warning__mode__block
+#: model:ir.model.fields.selection,name:advanced_po_warnings.selection__res_company__po_dest_mode__block
+#: model:ir.model.fields.selection,name:advanced_po_warnings.selection__res_company__po_dup_mode__block
+#: model:ir.model.fields.selection,name:advanced_po_warnings.selection__res_company__po_freq_mode__block
+msgid "Warning + block confirmation"
+msgstr "تحذير + حظر التأكيد"
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_order_warning_view_search
+msgid "Warning Only"
+msgstr "تحذير فقط"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order__po_warning_preview
+msgid "Warning Preview"
+msgstr "معاينة التحذيرات"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order__po_review_state
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order_warning__review_state
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_order_search_po_warnings
+msgid "Warning Review"
+msgstr "مراجعة التحذيرات"
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields.selection,name:advanced_po_warnings.selection__purchase_order_warning__mode__warning
+#: model:ir.model.fields.selection,name:advanced_po_warnings.selection__res_company__po_dest_mode__warning
+#: model:ir.model.fields.selection,name:advanced_po_warnings.selection__res_company__po_dup_mode__warning
+#: model:ir.model.fields.selection,name:advanced_po_warnings.selection__res_company__po_freq_mode__warning
+msgid "Warning only"
+msgstr "تحذير فقط"
+
+#. module: advanced_po_warnings
+#. odoo-python
+#: code:addons/advanced_po_warnings/models/purchase_order.py:0
+#, python-format
+msgid "Warning restriction bypassed by %s"
+msgstr "تم تجاوز قيد التحذير بواسطة %s"
+
+#. module: advanced_po_warnings
+#. odoo-python
+#: code:addons/advanced_po_warnings/models/purchase_order.py:0
+#: code:addons/advanced_po_warnings/models/purchase_order.py:0
+#, python-format
+msgid "Warning review fields can only be set through the review workflow."
+msgstr "لا يمكن تعيين حقول مراجعة التحذيرات إلا من خلال مسار المراجعة."
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_po_warning_review_wizard__warning_ids
+#: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order__po_warning_count
+msgid "Warnings"
+msgstr "التحذيرات"
+
+#. module: advanced_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_order_search_po_warnings
+msgid "Warnings Bypassed"
+msgstr "تحذيرات تم تجاوزها"
+
+#. module: advanced_po_warnings
+#: model_terms:ir.actions.act_window,help:advanced_po_warnings.action_purchase_order_warning
+msgid "Warnings raised when purchase orders are confirmed are logged here."
+msgstr "تُسجَّل هنا التحذيرات الصادرة عند تأكيد أوامر الشراء."
+
+#. module: advanced_po_warnings
+#: model:ir.model.fields,help:advanced_po_warnings.field_purchase_order_warning__partner_id
+msgid "You can find a vendor by its Name, TIN, Email or Internal Reference."
+msgstr ""
+"يمكنك البحث عن المورد باسمه أو رقمه الضريبي أو بريده الإلكتروني أو مرجعه "
+"الداخلي."

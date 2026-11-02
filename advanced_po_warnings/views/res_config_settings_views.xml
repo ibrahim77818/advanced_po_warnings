@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_po_warnings" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.po.warnings</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="purchase.res_config_settings_view_form_purchase"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@data-key='purchase']/div[@name='purchase_setting_container']" position="after">
+                <field name="company_id" invisible="1"/>
+                <h2>Advanced Order Warnings</h2>
+                <div class="row mt16 o_settings_container o_po_warning_settings" name="po_warning_setting_container">
+                    <div class="col-12 col-lg-6 o_setting_box" id="po_warning_enabled">
+                        <div class="o_setting_left_pane">
+                            <field name="po_warning_enabled"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="po_warning_enabled"/>
+                            <span class="fa fa-lg fa-building-o" title="Values set here are company-specific."
+                                  aria-label="Values set here are company-specific." groups="base.group_multi_company" role="img"/>
+                            <div class="text-muted">
+                                Check purchase orders for duplicates, frequent reorders and destinations when they are confirmed
+                            </div>
+                            <div class="content-group" attrs="{'invisible': [('po_warning_enabled', '=', False)]}">
+                                <div class="mt16">
+                                    <label for="po_warning_user_ids" class="o_light_label"/>
+                                    <field name="po_warning_user_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                                    <div class="text-muted small">
+                                        Leave empty to notify every PO Warnings Supervisor of the company.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rule 1: order duplicate -->
+                    <div class="col-12 col-lg-6 o_setting_box" id="po_dup_rule"
+                         attrs="{'invisible': [('po_warning_enabled', '=', False)]}">
+                        <div class="o_setting_left_pane">
+                            <field name="po_dup_active"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="po_dup_active"/>
+                            <div class="text-muted">
+                                Detect orders with the same products ordered again within a period
+                            </div>
+                            <div class="content-group" attrs="{'invisible': [('po_dup_active', '=', False)]}">
+                                <div class="row mt16">
+                                    <label for="po_dup_vendor_scope" string="Vendors" class="col-lg-5 o_light_label"/>
+                                    <field name="po_dup_vendor_scope" class="col-lg-7"
+                                           attrs="{'required': [('po_dup_active', '=', True)]}"/>
+                                </div>
+                                <div class="row">
+                                    <label for="po_dup_days" string="Period (days)" class="col-lg-5 o_light_label"/>
+                                    <field name="po_dup_days" class="col-lg-7"/>
+                                </div>
+                                <div class="row">
+                                    <label for="po_dup_match_qty" string="Match quantities" class="col-lg-5 o_light_label"/>
+                                    <field name="po_dup_match_qty" class="col-lg-7"/>
+                                </div>
+                                <div class="row">
+                                    <label for="po_dup_mode" string="Enforcement" class="col-lg-5 o_light_label"/>
+                                    <field name="po_dup_mode" class="col-lg-7" widget="radio"
+                                           attrs="{'required': [('po_dup_active', '=', True)]}"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rule 2: item reorder frequency -->
+                    <div class="col-12 col-lg-6 o_setting_box" id="po_freq_rule"
+                         attrs="{'invisible': [('po_warning_enabled', '=', False)]}">
+                        <div class="o_setting_left_pane">
+                            <field name="po_freq_active"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="po_freq_active"/>
+                            <div class="text-muted">
+                                Warn when a product is reordered too often within a time window
+                            </div>
+                            <div class="content-group" attrs="{'invisible': [('po_freq_active', '=', False)]}">
+                                <div class="row mt16">
+                                    <label for="po_freq_vendor_scope" string="Vendors" class="col-lg-5 o_light_label"/>
+                                    <field name="po_freq_vendor_scope" class="col-lg-7"
+                                           attrs="{'required': [('po_freq_active', '=', True)]}"/>
+                                </div>
+                                <div class="row">
+                                    <label for="po_freq_doc_scope" string="Documents" class="col-lg-5 o_light_label"/>
+                                    <field name="po_freq_doc_scope" class="col-lg-7"
+                                           attrs="{'required': [('po_freq_active', '=', True)]}"/>
+                                </div>
+                                <div class="row">
+                                    <label for="po_freq_days" string="Time window (days)" class="col-lg-5 o_light_label"/>
+                                    <field name="po_freq_days" class="col-lg-7"/>
+                                </div>
+                                <div class="row">
+                                    <label for="po_freq_min_orders" string="Previous orders threshold" class="col-lg-5 o_light_label"/>
+                                    <field name="po_freq_min_orders" class="col-lg-7"/>
+                                </div>
+                                <div class="row">
+                                    <label for="po_freq_mode" string="Enforcement" class="col-lg-5 o_light_label"/>
+                                    <field name="po_freq_mode" class="col-lg-7" widget="radio"
+                                           attrs="{'required': [('po_freq_active', '=', True)]}"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rule 3: destination location / warehouse -->
+                    <div class="col-12 col-lg-6 o_setting_box" id="po_dest_rule"
+                         attrs="{'invisible': [('po_warning_enabled', '=', False)]}">
+                        <div class="o_setting_left_pane">
+                            <field name="po_dest_active"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="po_dest_active"/>
+                            <div class="text-muted">
+                                Flag orders delivered to monitored locations or warehouses within a time window
+                            </div>
+                            <div class="content-group" attrs="{'invisible': [('po_dest_active', '=', False)]}">
+                                <div class="row mt16">
+                                    <label for="po_dest_target" string="Monitor" class="col-lg-5 o_light_label"/>
+                                    <field name="po_dest_target" class="col-lg-7" widget="radio"
+                                           attrs="{'required': [('po_dest_active', '=', True)]}"/>
+                                </div>
+                                <div class="row" attrs="{'invisible': [('po_dest_target', '!=', 'location')]}">
+                                    <label for="po_dest_location_ids" string="Locations" class="col-lg-5 o_light_label"/>
+                                    <field name="po_dest_location_ids" class="col-lg-7" widget="many2many_tags"
+                                           options="{'no_create': True}" placeholder="All locations"
+                                           domain="[('usage', '=', 'internal'), ('company_id', 'in', [company_id, False])]"/>
+                                </div>
+                                <div class="row" attrs="{'invisible': [('po_dest_target', '!=', 'warehouse')]}">
+                                    <label for="po_dest_warehouse_ids" string="Warehouses" class="col-lg-5 o_light_label"/>
+                                    <field name="po_dest_warehouse_ids" class="col-lg-7" widget="many2many_tags"
+                                           options="{'no_create': True}" placeholder="All warehouses"
+                                           domain="[('company_id', '=', company_id)]"/>
+                                </div>
+                                <div class="row">
+                                    <label for="po_dest_vendor_scope" string="Vendors" class="col-lg-5 o_light_label"/>
+                                    <field name="po_dest_vendor_scope" class="col-lg-7"
+                                           attrs="{'required': [('po_dest_active', '=', True)]}"/>
+                                </div>
+                                <div class="row">
+                                    <label for="po_dest_doc_scope" string="Documents" class="col-lg-5 o_light_label"/>
+                                    <field name="po_dest_doc_scope" class="col-lg-7"
+                                           attrs="{'required': [('po_dest_active', '=', True)]}"/>
+                                </div>
+                                <div class="row">
+                                    <label for="po_dest_days" string="Time window (days)" class="col-lg-5 o_light_label"/>
+                                    <field name="po_dest_days" class="col-lg-7"/>
+                                </div>
+                                <div class="text-muted small">
+                                    Set the time window to 0 to flag every order to these destinations.
+                                </div>
+                                <div class="row mt8">
+                                    <label for="po_dest_mode" string="Enforcement" class="col-lg-5 o_light_label"/>
+                                    <field name="po_dest_mode" class="col-lg-7" widget="radio"
+                                           attrs="{'required': [('po_dest_active', '=', True)]}"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

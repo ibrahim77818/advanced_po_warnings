@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Alert table shared by the form preview, chatter messages and review activities.
+         Uses logical (start/end) alignment classes only, so it mirrors correctly in RTL. -->
+    <template id="po_warning_alerts">
+        <div class="o_po_warning_alerts">
+            <p t-if="title" class="mb-2"><strong t-esc="title"/></p>
+            <p t-if="context == 'preview' and blocking" class="mb-2">
+                This order will be blocked on confirmation and sent to a supervisor for review.
+            </p>
+            <p t-elif="context == 'preview'" class="mb-2">
+                This order can be confirmed, but the following warnings will be recorded.
+            </p>
+            <table class="table table-sm o_po_warning_table mb-0">
+                <thead>
+                    <tr>
+                        <th class="text-start">Rule</th>
+                        <th class="text-start">Enforcement</th>
+                        <th class="text-start">Alert</th>
+                        <th class="text-start">Related Orders</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr t-foreach="rows" t-as="row">
+                        <td class="text-start text-nowrap" t-esc="row['rule']"/>
+                        <td class="text-start text-nowrap">
+                            <span t-attf-class="badge rounded-pill #{'bg-danger' if row['mode'] == 'block' else 'bg-warning text-dark'}"
+                                  t-esc="row['mode_label']"/>
+                        </td>
+                        <td class="text-start" t-esc="row['message']"/>
+                        <td class="text-start">
+                            <t t-foreach="row['conflicts']" t-as="conflict">
+                                <a t-attf-href="/web#model=purchase.order&amp;id=#{conflict.id}&amp;view_type=form"
+                                   data-oe-model="purchase.order" t-att-data-oe-id="conflict.id"
+                                   t-esc="conflict.name"/><t t-if="not conflict_last">, </t>
+                            </t>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </template>
+</odoo>

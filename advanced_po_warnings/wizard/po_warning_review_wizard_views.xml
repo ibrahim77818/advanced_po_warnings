@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="po_warning_review_wizard_view_form" model="ir.ui.view">
+        <field name="name">po.warning.review.wizard.form</field>
+        <field name="model">po.warning.review.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Review Blocked Order">
+                <group>
+                    <field name="order_ids" widget="many2many_tags" readonly="1"/>
+                </group>
+                <field name="warning_ids" readonly="1" nolabel="1">
+                    <tree decoration-danger="mode == 'block'" decoration-warning="mode == 'warning'">
+                        <field name="order_id"/>
+                        <field name="rule"/>
+                        <field name="mode" widget="badge"
+                               decoration-danger="mode == 'block'" decoration-warning="mode == 'warning'"/>
+                        <field name="message"/>
+                        <field name="conflict_order_ids" widget="many2many_tags"/>
+                    </tree>
+                </field>
+                <group>
+                    <field name="note" required="1"
+                           placeholder="Explain why the order is bypassed or rejected..."/>
+                </group>
+                <footer>
+                    <button name="action_bypass" type="object" string="Bypass &amp; Confirm"
+                            class="btn-primary" icon="fa-check" data-hotkey="q"
+                            confirm="The restriction will be bypassed and the order confirmed. Continue?"/>
+                    <button name="action_reject" type="object" string="Reject Order"
+                            class="btn-danger" icon="fa-times" data-hotkey="w"
+                            confirm="The order will be rejected and cancelled. Continue?"/>
+                    <button string="Discard" special="cancel" class="btn-secondary" data-hotkey="z"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

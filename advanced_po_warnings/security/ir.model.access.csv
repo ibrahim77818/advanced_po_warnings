@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_purchase_order_warning_user,purchase.order.warning user,model_purchase_order_warning,purchase.group_purchase_user,1,0,0,0
+access_purchase_order_warning_supervisor,purchase.order.warning supervisor,model_purchase_order_warning,group_po_warning_supervisor,1,0,0,0
+access_po_warning_review_wizard_supervisor,po.warning.review.wizard supervisor,model_po_warning_review_wizard,group_po_warning_supervisor,1,1,1,1

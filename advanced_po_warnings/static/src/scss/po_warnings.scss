@@ -1,0 +1,37 @@
+// Advanced PO Warnings - logical (start/end) properties only, so Odoo's RTL build
+// mirrors everything correctly for Arabic.
+.o_po_warning_banner {
+    border-radius: 0;
+
+    .o_field_html,
+    .o_readonly {
+        background: transparent;
+    }
+}
+
+.o_po_warning_alerts {
+    .o_po_warning_table {
+        --bs-table-bg: transparent;
+        width: 100%;
+
+        th,
+        td {
+            vertical-align: top;
+            padding-block: 0.25rem;
+            padding-inline: 0.5rem;
+        }
+
+        th {
+            font-weight: 600;
+            white-space: nowrap;
+        }
+    }
+
+    a + a {
+        margin-inline-start: 0.125rem;
+    }
+}
+
+.o_po_warning_settings .o_setting_right_pane .row > label {
+    padding-inline-end: 0.5rem;
+}
