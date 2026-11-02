@@ -1,12 +1,13 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # 	* advanced_po_warnings
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0\n"
+"Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-01 18:10+0000\n"
-"PO-Revision-Date: 2026-11-01 18:10+0000\n"
+"POT-Creation-Date: 2026-11-02 15:30+0000\n"
+"PO-Revision-Date: 2026-11-02 15:30+0000\n"
 "Last-Translator: Ibrahim Yahia\n"
 "Language-Team: Arabic\n"
 "Language: ar_001\n"
@@ -54,17 +55,6 @@ msgstr ""
 "                    <strong>تم حظر التأكيد.</strong>\n"
 "                    أدى هذا الأمر إلى تحذيرات حاظرة وهو بانتظار مراجعة المشرف.\n"
 "                    راجع علامة التبويب <em>تحذيرات الأمر</em>."
-
-#. module: advanced_po_warnings
-#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.res_config_settings_view_form_po_warnings
-msgid ""
-"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
-"specific.\" aria-label=\"Values set here are company-specific.\" "
-"groups=\"base.group_multi_company\" role=\"img\"/>"
-msgstr ""
-"<span class=\"fa fa-lg fa-building-o\" title=\"القيم المحددة هنا خاصة "
-"بالشركة.\" aria-label=\"القيم المحددة هنا خاصة بالشركة.\" "
-"groups=\"base.group_multi_company\" role=\"img\"/>"
 
 #. module: advanced_po_warnings
 #: model_terms:ir.ui.view,arch_db:advanced_po_warnings.res_config_settings_view_form_po_warnings
@@ -124,6 +114,7 @@ msgstr "الأوامر المحظورة"
 
 #. module: advanced_po_warnings
 #: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_order_search_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_rfq_search_po_warnings
 msgid "Blocked by Warnings"
 msgstr "محظورة بسبب التحذيرات"
 
@@ -438,12 +429,6 @@ msgid "Justification"
 msgstr "المبرر"
 
 #. module: advanced_po_warnings
-#: model:ir.model.fields,field_description:advanced_po_warnings.field_po_warning_review_wizard____last_update
-#: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order_warning____last_update
-msgid "Last Modified on"
-msgstr "آخر تعديل في"
-
-#. module: advanced_po_warnings
 #: model:ir.model.fields,field_description:advanced_po_warnings.field_po_warning_review_wizard__write_uid
 #: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order_warning__write_uid
 msgid "Last Updated by"
@@ -662,6 +647,7 @@ msgstr "مرفوض"
 
 #. module: advanced_po_warnings
 #: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_order_search_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_rfq_search_po_warnings
 msgid "Rejected by Supervisor"
 msgstr "مرفوضة من المشرف"
 
@@ -916,6 +902,7 @@ msgstr "معاينة التحذيرات"
 #: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order__po_review_state
 #: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order_warning__review_state
 #: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_order_search_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_rfq_search_po_warnings
 msgid "Warning Review"
 msgstr "مراجعة التحذيرات"
 
@@ -950,6 +937,7 @@ msgstr "التحذيرات"
 
 #. module: advanced_po_warnings
 #: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_order_search_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_rfq_search_po_warnings
 msgid "Warnings Bypassed"
 msgstr "تحذيرات تم تجاوزها"
 

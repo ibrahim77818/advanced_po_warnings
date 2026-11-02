@@ -72,8 +72,8 @@ class PurchaseOrder(models.Model):
     # ------------------------------------------------------------------------------
     def _compute_po_warning_count(self):
         data = self.env['purchase.order.warning']._read_group(
-            [('order_id', 'in', self.ids)], ['order_id'], ['order_id'])
-        counts = {d['order_id'][0]: d['order_id_count'] for d in data}
+            [('order_id', 'in', self.ids)], ['order_id'], ['__count'])
+        counts = {order.id: count for order, count in data}
         for order in self:
             order.po_warning_count = counts.get(order.id, 0)
 

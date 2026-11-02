@@ -114,4 +114,5 @@ class TestPOWarningDuplicate(POWarningCommon):
         self.assertEqual(order.po_review_state, 'blocked')
         self.assertEqual(action['params']['type'], 'danger')
         self.assertEqual(order.po_warning_ids.mode, 'block')
+        self.assertEqual(order.po_warning_count, 1)
         self.assertIn('Order confirmation blocked', order.message_ids[0].body)

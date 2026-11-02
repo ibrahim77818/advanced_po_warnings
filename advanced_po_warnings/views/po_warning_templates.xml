@@ -4,7 +4,7 @@
          Uses logical (start/end) alignment classes only, so it mirrors correctly in RTL. -->
     <template id="po_warning_alerts">
         <div class="o_po_warning_alerts">
-            <p t-if="title" class="mb-2"><strong t-esc="title"/></p>
+            <p t-if="title" class="mb-2"><strong t-out="title"/></p>
             <p t-if="context == 'preview' and blocking" class="mb-2">
                 This order will be blocked on confirmation and sent to a supervisor for review.
             </p>
@@ -22,17 +22,17 @@
                 </thead>
                 <tbody>
                     <tr t-foreach="rows" t-as="row">
-                        <td class="text-start text-nowrap" t-esc="row['rule']"/>
+                        <td class="text-start text-nowrap" t-out="row['rule']"/>
                         <td class="text-start text-nowrap">
-                            <span t-attf-class="badge rounded-pill #{'bg-danger' if row['mode'] == 'block' else 'bg-warning text-dark'}"
-                                  t-esc="row['mode_label']"/>
+                            <span t-attf-class="badge rounded-pill #{'text-bg-danger' if row['mode'] == 'block' else 'text-bg-warning'}"
+                                  t-out="row['mode_label']"/>
                         </td>
-                        <td class="text-start" t-esc="row['message']"/>
+                        <td class="text-start" t-out="row['message']"/>
                         <td class="text-start">
                             <t t-foreach="row['conflicts']" t-as="conflict">
                                 <a t-attf-href="/web#model=purchase.order&amp;id=#{conflict.id}&amp;view_type=form"
                                    data-oe-model="purchase.order" t-att-data-oe-id="conflict.id"
-                                   t-esc="conflict.name"/><t t-if="not conflict_last">, </t>
+                                   t-out="conflict.name"/><t t-if="not conflict_last">, </t>
                             </t>
                         </td>
                     </tr>
