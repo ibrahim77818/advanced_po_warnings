@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0\n"
+"Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-01 18:10+0000\n"
-"PO-Revision-Date: 2026-11-01 18:10+0000\n"
+"POT-Creation-Date: 2026-11-02 16:49+0000\n"
+"PO-Revision-Date: 2026-11-02 16:49+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,14 +18,12 @@ msgstr ""
 #. module: advanced_po_warnings
 #. odoo-python
 #: code:addons/advanced_po_warnings/models/purchase_order.py:0
-#, python-format
 msgid "%(orders)s confirmed. Warnings were recorded in the chatter."
 msgstr ""
 
 #. module: advanced_po_warnings
 #. odoo-python
 #: code:addons/advanced_po_warnings/models/purchase_order.py:0
-#, python-format
 msgid ""
 "%(orders)s could not be confirmed. Supervisors have been notified for "
 "review."
@@ -34,7 +32,6 @@ msgstr ""
 #. module: advanced_po_warnings
 #. odoo-python
 #: code:addons/advanced_po_warnings/models/purchase_order.py:0
-#, python-format
 msgid ""
 "%(product)s was already ordered %(count)s time(s) within %(days)s days "
 "(%(scope)s, %(docs)s)."
@@ -47,14 +44,6 @@ msgid ""
 "                    <strong>Confirmation blocked.</strong>\n"
 "                    This order triggered blocking warnings and is waiting for a supervisor review.\n"
 "                    See the <em>Order Warnings</em> tab."
-msgstr ""
-
-#. module: advanced_po_warnings
-#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.res_config_settings_view_form_po_warnings
-msgid ""
-"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
-"specific.\" aria-label=\"Values set here are company-specific.\" "
-"groups=\"base.group_multi_company\" role=\"img\"/>"
 msgstr ""
 
 #. module: advanced_po_warnings
@@ -87,7 +76,6 @@ msgstr ""
 #. module: advanced_po_warnings
 #. odoo-python
 #: code:addons/advanced_po_warnings/models/purchase_order.py:0
-#, python-format
 msgid ""
 "Another order is already scheduled for %(dest)s within %(days)s days "
 "(%(scope)s)."
@@ -114,6 +102,7 @@ msgstr ""
 
 #. module: advanced_po_warnings
 #: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_order_search_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_rfq_search_po_warnings
 msgid "Blocked by Warnings"
 msgstr ""
 
@@ -126,7 +115,6 @@ msgstr ""
 #. module: advanced_po_warnings
 #. odoo-python
 #: code:addons/advanced_po_warnings/models/purchase_order.py:0
-#, python-format
 msgid "Blocking warnings were resolved before confirmation."
 msgstr ""
 
@@ -143,7 +131,6 @@ msgstr ""
 #. module: advanced_po_warnings
 #. odoo-python
 #: code:addons/advanced_po_warnings/models/purchase_order.py:0
-#, python-format
 msgid "Bypassed: %s"
 msgstr ""
 
@@ -172,14 +159,12 @@ msgstr ""
 #. module: advanced_po_warnings
 #. odoo-python
 #: code:addons/advanced_po_warnings/models/purchase_order.py:0
-#, python-format
 msgid "Confirmation blocked"
 msgstr ""
 
 #. module: advanced_po_warnings
 #. odoo-python
 #: code:addons/advanced_po_warnings/models/purchase_order.py:0
-#, python-format
 msgid "Confirmed after supervisor bypass"
 msgstr ""
 
@@ -192,8 +177,6 @@ msgstr ""
 #. module: advanced_po_warnings
 #. odoo-python
 #: code:addons/advanced_po_warnings/models/purchase_order.py:0
-#: code:addons/advanced_po_warnings/models/purchase_order.py:0
-#, python-format
 msgid "Confirmed with warnings"
 msgstr ""
 
@@ -217,7 +200,6 @@ msgstr ""
 #. module: advanced_po_warnings
 #. odoo-python
 #: code:addons/advanced_po_warnings/models/purchase_order.py:0
-#, python-format
 msgid "Deliveries to %(dest)s are restricted."
 msgstr ""
 
@@ -423,12 +405,6 @@ msgid "Justification"
 msgstr ""
 
 #. module: advanced_po_warnings
-#: model:ir.model.fields,field_description:advanced_po_warnings.field_po_warning_review_wizard____last_update
-#: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order_warning____last_update
-msgid "Last Modified on"
-msgstr ""
-
-#. module: advanced_po_warnings
 #: model:ir.model.fields,field_description:advanced_po_warnings.field_po_warning_review_wizard__write_uid
 #: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order_warning__write_uid
 msgid "Last Updated by"
@@ -497,28 +473,24 @@ msgstr ""
 #. module: advanced_po_warnings
 #. odoo-python
 #: code:addons/advanced_po_warnings/models/purchase_order.py:0
-#, python-format
 msgid "Only PO Warnings Supervisors can review blocked purchase orders."
 msgstr ""
 
 #. module: advanced_po_warnings
 #. odoo-python
 #: code:addons/advanced_po_warnings/models/purchase_order.py:0
-#, python-format
 msgid "Only blocked purchase orders can be bypassed."
 msgstr ""
 
 #. module: advanced_po_warnings
 #. odoo-python
 #: code:addons/advanced_po_warnings/models/purchase_order.py:0
-#, python-format
 msgid "Only blocked purchase orders can be rejected."
 msgstr ""
 
 #. module: advanced_po_warnings
 #. odoo-python
 #: code:addons/advanced_po_warnings/models/purchase_order.py:0
-#, python-format
 msgid "Only blocked purchase orders can be reviewed."
 msgstr ""
 
@@ -548,14 +520,12 @@ msgstr ""
 #. module: advanced_po_warnings
 #. odoo-python
 #: code:addons/advanced_po_warnings/models/purchase_order.py:0
-#, python-format
 msgid "Order confirmation blocked"
 msgstr ""
 
 #. module: advanced_po_warnings
 #. odoo-python
 #: code:addons/advanced_po_warnings/models/purchase_order.py:0
-#, python-format
 msgid "Order rejected by %s"
 msgstr ""
 
@@ -584,7 +554,6 @@ msgstr ""
 #. module: advanced_po_warnings
 #. odoo-python
 #: code:addons/advanced_po_warnings/wizard/po_warning_review_wizard.py:0
-#, python-format
 msgid "Please record a justification before taking a decision."
 msgstr ""
 
@@ -644,13 +613,13 @@ msgstr ""
 
 #. module: advanced_po_warnings
 #: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_order_search_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_rfq_search_po_warnings
 msgid "Rejected by Supervisor"
 msgstr ""
 
 #. module: advanced_po_warnings
 #. odoo-python
 #: code:addons/advanced_po_warnings/models/purchase_order.py:0
-#, python-format
 msgid "Rejected: %s"
 msgstr ""
 
@@ -670,7 +639,6 @@ msgstr ""
 #. odoo-python
 #: code:addons/advanced_po_warnings/models/purchase_order.py:0
 #: model_terms:ir.ui.view,arch_db:advanced_po_warnings.po_warning_review_wizard_view_form
-#, python-format
 msgid "Review Blocked Order"
 msgstr ""
 
@@ -697,7 +665,6 @@ msgstr ""
 #. module: advanced_po_warnings
 #. odoo-python
 #: code:addons/advanced_po_warnings/models/purchase_order.py:0
-#, python-format
 msgid "Review blocked purchase order %s"
 msgstr ""
 
@@ -728,7 +695,6 @@ msgstr ""
 #. module: advanced_po_warnings
 #. odoo-python
 #: code:addons/advanced_po_warnings/models/purchase_order.py:0
-#, python-format
 msgid ""
 "Same products and quantities as another order within %(days)s days "
 "(%(scope)s)."
@@ -737,7 +703,6 @@ msgstr ""
 #. module: advanced_po_warnings
 #. odoo-python
 #: code:addons/advanced_po_warnings/models/purchase_order.py:0
-#, python-format
 msgid "Same products as another order within %(days)s days (%(scope)s)."
 msgstr ""
 
@@ -784,21 +749,18 @@ msgstr ""
 #. module: advanced_po_warnings
 #. odoo-python
 #: code:addons/advanced_po_warnings/models/res_company.py:0
-#, python-format
 msgid "The destination time window cannot be negative."
 msgstr ""
 
 #. module: advanced_po_warnings
 #. odoo-python
 #: code:addons/advanced_po_warnings/models/res_company.py:0
-#, python-format
 msgid "The duplicate and frequency periods must be at least 1 day."
 msgstr ""
 
 #. module: advanced_po_warnings
 #. odoo-python
 #: code:addons/advanced_po_warnings/models/purchase_order.py:0
-#, python-format
 msgid "The order was cancelled."
 msgstr ""
 
@@ -810,7 +772,6 @@ msgstr ""
 #. module: advanced_po_warnings
 #. odoo-python
 #: code:addons/advanced_po_warnings/models/res_company.py:0
-#, python-format
 msgid "The previous orders threshold must be at least 1."
 msgstr ""
 
@@ -892,6 +853,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order__po_review_state
 #: model:ir.model.fields,field_description:advanced_po_warnings.field_purchase_order_warning__review_state
 #: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_order_search_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_rfq_search_po_warnings
 msgid "Warning Review"
 msgstr ""
 
@@ -906,15 +868,12 @@ msgstr ""
 #. module: advanced_po_warnings
 #. odoo-python
 #: code:addons/advanced_po_warnings/models/purchase_order.py:0
-#, python-format
 msgid "Warning restriction bypassed by %s"
 msgstr ""
 
 #. module: advanced_po_warnings
 #. odoo-python
 #: code:addons/advanced_po_warnings/models/purchase_order.py:0
-#: code:addons/advanced_po_warnings/models/purchase_order.py:0
-#, python-format
 msgid "Warning review fields can only be set through the review workflow."
 msgstr ""
 
@@ -926,6 +885,7 @@ msgstr ""
 
 #. module: advanced_po_warnings
 #: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_order_search_po_warnings
+#: model_terms:ir.ui.view,arch_db:advanced_po_warnings.purchase_rfq_search_po_warnings
 msgid "Warnings Bypassed"
 msgstr ""
 

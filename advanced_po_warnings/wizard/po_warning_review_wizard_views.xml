@@ -9,14 +9,14 @@
                     <field name="order_ids" widget="many2many_tags" readonly="1"/>
                 </group>
                 <field name="warning_ids" readonly="1" nolabel="1">
-                    <tree decoration-danger="mode == 'block'" decoration-warning="mode == 'warning'">
-                        <field name="order_id"/>
-                        <field name="rule"/>
-                        <field name="mode" widget="badge"
+                    <list decoration-danger="mode == 'block'" decoration-warning="mode == 'warning'">
+                        <field name="order_id" width="100px"/>
+                        <field name="rule" width="170px"/>
+                        <field name="mode" width="210px" widget="badge"
                                decoration-danger="mode == 'block'" decoration-warning="mode == 'warning'"/>
                         <field name="message"/>
                         <field name="conflict_order_ids" widget="many2many_tags"/>
-                    </tree>
+                    </list>
                 </field>
                 <group>
                     <field name="note" required="1"
